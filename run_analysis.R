@@ -38,8 +38,6 @@ run_analysis <- function(...){
   xNames <- c(as.character(xNames), "subject", "activity")
   Data <- subset(Data, select=xNames)
   
-  activityLabels <- read.table(file.path(path_rf, "activity_labels.txt"), header = FALSE)
-  
   names(Data) <- gsub("^t", "Time", names(Data))
   names(Data) <- gsub("^f", "Frequency", names(Data))
   names(Data) <- gsub("Acc", "Accelerometer", names(Data))
